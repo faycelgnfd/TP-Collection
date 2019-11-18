@@ -1,6 +1,8 @@
 package code;
 
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Vector;
 
 public class TestSeletion implements CritereSelection{
 	
@@ -16,7 +18,7 @@ public class TestSeletion implements CritereSelection{
 	
 	public static Collection selection(Collection source, CritereSelection critere)
 	{
-		Collection c = null;
+		Vector c = new Vector();
 		for(Object o : source)
 		{
 			if(critere.ok(o))
@@ -27,7 +29,17 @@ public class TestSeletion implements CritereSelection{
 	
 	public static void main(String args[])
 	{
+		Vector<Integer> l = new Vector<Integer>();
+		for(int i=0;i<=100;i++)
+		{
+			l.add(i);
+		}
 		
+		CritereSelection c = new TestSeletion() ;
+		Vector<Integer> lm3 = new Vector<Integer>();
+		
+		lm3 = (Vector)selection(l,c);
+		System.out.println(lm3);
 	}
 
 	
