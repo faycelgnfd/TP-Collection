@@ -16,7 +16,7 @@ public class TestSeletion implements CritereSelection{
 			return false;
 	}
 	
-	public static Collection selection(Collection source, CritereSelection critere)
+	public static Collection selection(Vector source, CritereSelection critere)
 	{
 		Vector c = new Vector();
 		for(Object o : source)
